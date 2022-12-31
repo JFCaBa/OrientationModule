@@ -16,6 +16,8 @@
 		82CE37F429605E1D00B189FF /* GyroModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE37F329605E1D00B189FF /* GyroModuleTests.swift */; };
 		82CE37FE29605E1D00B189FF /* GyroModuleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE37FD29605E1D00B189FF /* GyroModuleUITests.swift */; };
 		82CE380029605E1D00B189FF /* GyroModuleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE37FF29605E1D00B189FF /* GyroModuleUITestsLaunchTests.swift */; };
+		82CE380D29605E2B00B189FF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE380C29605E2B00B189FF /* ViewModel.swift */; };
+		82CE380F29605E5E00B189FF /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE380E29605E5E00B189FF /* GyroManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		82CE37F929605E1D00B189FF /* GyroModuleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GyroModuleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CE37FD29605E1D00B189FF /* GyroModuleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroModuleUITests.swift; sourceTree = "<group>"; };
 		82CE37FF29605E1D00B189FF /* GyroModuleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroModuleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82CE380C29605E2B00B189FF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		82CE380E29605E5E00B189FF /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				82CE37DC29605E1B00B189FF /* AppDelegate.swift */,
 				82CE37DE29605E1B00B189FF /* SceneDelegate.swift */,
 				82CE37E029605E1B00B189FF /* ViewController.swift */,
+				82CE380C29605E2B00B189FF /* ViewModel.swift */,
+				82CE380E29605E5E00B189FF /* GyroManager.swift */,
 				82CE37E229605E1B00B189FF /* Main.storyboard */,
 				82CE37E529605E1D00B189FF /* Assets.xcassets */,
 				82CE37E729605E1D00B189FF /* LaunchScreen.storyboard */,
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CE380F29605E5E00B189FF /* GyroManager.swift in Sources */,
 				82CE37E129605E1B00B189FF /* ViewController.swift in Sources */,
 				82CE37DD29605E1B00B189FF /* AppDelegate.swift in Sources */,
+				82CE380D29605E2B00B189FF /* ViewModel.swift in Sources */,
 				82CE37DF29605E1B00B189FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
