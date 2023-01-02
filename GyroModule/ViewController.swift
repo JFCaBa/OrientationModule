@@ -23,24 +23,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup bingings
-        setupBindings()
+        binding(to: viewModel)
         // Start capturing data
         viewModel.start()
     }
 
-    fileprivate func setupBindings() {
+    fileprivate func binding(to viewModel: ViewModel) {
         viewModel.myPitchPublisher
+            .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: lblPitch)
             .store(in: &subscribers)
         
         viewModel.myYawPublisher
+            .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: lblYaw)
             .store(in: &subscribers)
         
         viewModel.myRollPublisher
+            .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: lblRoll)
             .store(in: &subscribers)
-        
     }
 }
 

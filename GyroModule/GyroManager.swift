@@ -19,7 +19,8 @@ class GyroManager: NSObject {
     
     public func connect() {
         manager.deviceMotionUpdateInterval  = 0.2
-        manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in
+        let motionQueue = OperationQueue()
+        manager.startDeviceMotionUpdates(to: motionQueue, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in
             if NSError == nil, let data = motionData {
                 DispatchQueue.main.async{
                     // Normalize values and convert from radians to degrees
@@ -31,11 +32,8 @@ class GyroManager: NSObject {
     
     private func outputRPY(data: CMDeviceMotion) {
         let q: CMQuaternion = data.attitude.quaternion
-        // Roll: atan2(2.0 * (q.z * q.y + q.w * q.x) , 1.0 - 2.0 * (q.x * q.x + q.y * q.y))
-        // Pitch: asin(2.0 * (q.y * q.w - q.z * q.x))
-        // Yaw: atan2(2.0 * (q.z * q.w + q.x * q.y) , -1.0 + 2.0 * (q.w * q.w + q.x * q.x))
-        roll    = asin(2.0 * (q.y * q.w - q.z * q.x)) * 180 / Double.pi
-        pitch   = atan2(2.0*(q.y*q.z + q.w*q.x), q.w*q.w - q.x*q.x - q.y*q.y + q.z*q.z) * 180 / Double.pi
-        yaw     = asin(2.0 * (q.y * q.w - q.z * q.x)) * 180 / Double.pi
+        yaw      = asin(2.0 * (q.y * q.w - q.z * q.x)) * 180 / Double.pi
+        pitch    = atan2(2.0*(q.y*q.z + q.w*q.x), q.w*q.w - q.x*q.x - q.y*q.y + q.z*q.z) * 180 / Double.pi
+        roll     = atan2(2.0 * (q.z * q.w + q.x * q.y) , -1.0 + 2.0 * (q.w * q.w + q.x * q.x)) * 180 / Double.pi
     }
 }
